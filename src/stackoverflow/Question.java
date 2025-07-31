@@ -32,11 +32,11 @@ public class Question  implements Commentable, Votable{
         this.votes = new CopyOnWriteArrayList<>();
     }
 
-    private synchronized void addAnswer(Answer answer) {
+    public synchronized void addAnswer(Answer answer) {
         answers.add(answer);
     }
 
-    private synchronized void acceptAnswer(Answer answer) {
+    public synchronized void acceptAnswer(Answer answer) {
         this.acceptedAnswer = answer;
     }
 
@@ -84,5 +84,9 @@ public class Question  implements Commentable, Votable{
 
     public List<Tag> getTags() {
         return new ArrayList<>(tags);
+    }
+
+    public Answer getAcceptedAnswer() {
+        return acceptedAnswer;
     }
 }
