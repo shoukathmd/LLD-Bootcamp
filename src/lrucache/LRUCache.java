@@ -14,18 +14,18 @@ public class LRUCache<K, V> {
         this.ddl = new DoubleLinkedList<K, V>();
     }
 
-    V get(K key) {
+    synchronized V get(K key) {
         //move the K, V to front of the DLL
         return null;
     }
 
-    void put(K key, V value) {
+    synchronized void put(K key, V value) {
         // check if alread exist
         // else check capacity and work
 
     }
 
-    void remove(K key) {
+    synchronized void remove(K key) {
         // remove from map and DLL as well
     }
 }
